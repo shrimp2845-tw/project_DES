@@ -1,8 +1,8 @@
-import bit_utils as b
-import permute as p
-import key as k
-import mangler as m
-import feistel as f 
+from . import bit_utils as b
+from . import permute as p
+from . import key as k
+from . import mangler as m
+from . import feistel as f 
 
 meticulous_mode = True
 
