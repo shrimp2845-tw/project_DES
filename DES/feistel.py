@@ -1,4 +1,3 @@
-#feistel.py
 import bit_utils as b 
 
 meticulous_mode = True
