@@ -1,4 +1,4 @@
-from crypto import DES
+from des import DES
 
 def test(l):
     key, pt, ct = l
