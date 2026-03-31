@@ -1,4 +1,4 @@
-import bit_utils as b 
+from . import bit_utils as b 
 
 meticulous_mode = True
 
