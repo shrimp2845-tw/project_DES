@@ -29,11 +29,7 @@ def ebc_decrypt(file: str, extension: str, key: bytes):
     o_file.close()
 
 def main():
-    #ebc_encrypt("hina.png", b'M\xde\xab\xb9s\\\x12\x11')
-    #ebc_decrypt("hina.bin", 'png', b'M\xde\xab\xb9s\\\x12\x11')
-    #ebc_encrypt("mumei.jpg", b'\x1c\xb3*\x88"vu\x1f')
-    ebc_decrypt("mumei.bin", "jpg" ,b'\x1c\xb3*\x88"vu\x1f')
-
+    pass
 
 if __name__ == "__main__":
     main()
