@@ -1,5 +1,5 @@
-import bit_utils as b
-import permute as p
+from . import bit_utils as b
+from . import permute as p
 
 meticulous_mode = True
 
