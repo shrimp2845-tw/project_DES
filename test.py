@@ -2,16 +2,11 @@ from des import DES
 
 def test(l):
     key, pt, ct = l
-    print(f' key:{key} \n plaintext:{pt} \n cipher_text:{ct}')
-    e, d = False, False
-    key = bytes.fromhex(key)
-    ct = bytes.fromhex(ct)
-    pt = bytes.fromhex(pt)
+    print(f' key: {key} \n plaintext: {pt} \n cipher_text: {ct}')
+    key, ct, pt = bytes.fromhex(key), bytes.fromhex(ct), bytes.fromhex(pt)
     cipher = DES(key)
-    if cipher.encrypt(pt) == ct:
-        e = True
-    if cipher.decrypt(ct) == pt:
-        d = True
+    e = cipher.encrypt(pt) == ct
+    d = cipher.decrypt(ct) == pt
     print(' encrypt_success:', e, '\n', 'decrypt_success:',d)
 
 def main():
@@ -42,3 +37,4 @@ def main():
         
 if __name__ == "__main__":
     main()
+    
