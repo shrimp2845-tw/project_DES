@@ -31,9 +31,10 @@ def main():
      "0000000000000000",
      "95A8D72813DAA94D")
      ]
-    
+    print('_'*30)
     for i in cases:
         test(i)
+        print('_'*30)
         
 if __name__ == "__main__":
     main()
