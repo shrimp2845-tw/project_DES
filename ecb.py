@@ -20,7 +20,7 @@ def ecb_decrypt(file: str, extension: str, key: bytes):
     bfile = open(file, 'rb')
     data = bfile.read()
     bfile.close()
-    blocks = b.split_file(data, 8)
+    blocks = b.split_file(b.remove_padding(data), 8)
     p_bytes = b''
     for i in blocks:
         p_bytes += cipher.decrypt(i)
