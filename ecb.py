@@ -2,7 +2,7 @@ from des import DES
 import block_utils as b
 import os
 
-def ebc_encrypt(file: str, key: bytes):
+def ecb_encrypt(file: str, key: bytes):
     cipher = DES(key)
     bfile = open(file, 'rb')
     data = bfile.read()
@@ -15,7 +15,7 @@ def ebc_encrypt(file: str, key: bytes):
     o_file.write(c_bytes)
     o_file.close()
 
-def ebc_decrypt(file: str, extension: str, key: bytes):
+def ecb_decrypt(file: str, extension: str, key: bytes):
     cipher = DES(key)
     bfile = open(file, 'rb')
     data = bfile.read()
