@@ -42,14 +42,14 @@ class DES:
         if len(block) != 8:
             raise ValueError('encrypt:invalid block')
         plaintext = b.bytes_to_bits(block)
-        cipher_text =fp(f.feistel(ip(plaintext), self.rks, m.f))
+        cipher_text = fp(f.feistel(ip(plaintext), self.rks, m.f))
         return b.bits_to_bytes(cipher_text)
     
     def decrypt(self, block: bytes):
         if len(block) != 8:
             raise ValueError('decrypt:invalid block')
         cipher_text = b.bytes_to_bits(block)
-        plaintext =fp(f.feistel(ip(cipher_text), self.rks[::-1], m.f))
+        plaintext = fp(f.feistel(ip(cipher_text), self.rks[::-1], m.f))
         return b.bits_to_bytes(plaintext)
         
 def main():
