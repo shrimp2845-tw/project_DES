@@ -1,8 +1,8 @@
-from des import DES
+from crypto import DES
 
 def test(l):
     key, pt, ct = l
-    print(f' key: {key} \n plaintext: {pt} \n cipher_text: {ct}')
+    print(f' key        : {key} \n plaintext  : {pt} \n cipher_text: {ct}')
     key, ct, pt = bytes.fromhex(key), bytes.fromhex(ct), bytes.fromhex(pt)
     cipher = DES(key)
     e = cipher.encrypt(pt) == ct
@@ -38,4 +38,3 @@ def main():
         
 if __name__ == "__main__":
     main()
-    
