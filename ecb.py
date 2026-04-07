@@ -20,14 +20,15 @@ def ecb_decrypt(file: str, new_name: str, key: str):
     f.write_bytes(new_name, p_bytes)
 
 def main():
-    f = input('file name:')
+    fn = input('file name:')
     k = input('key name:')
     n = input('new name:')
     ed = input('encrypt or decrypt? (e or d)')
     if ed == 'e':
-        ecb_encrypt(f, n, k)
+        ecb_encrypt(fn, n, k)
     else:
-        ecb_decrypt(f, n, k)
+        ecb_decrypt(fn, n, k)
 
 if __name__ == "__main__":
     main()
+    
