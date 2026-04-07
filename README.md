@@ -1,5 +1,5 @@
 ### project_DES
-An educational Python implementation of the Data Encryption Standard (DES). This project breaks down the complex Feistel network into human-readable modules, following the official NIST specifications, and use EBC and CBC to actually encrypt files.
+An educational Python implementation of the Data Encryption Standard (DES). This project breaks down the complex Feistel network into human-readable modules following the official NIST specifications, and supports ECB and CBC modes for real file encryption.
 
 ### history
 The Data Encryption Standard (DES) is a symmetric block cipher developed by IBM in the 1970s.
