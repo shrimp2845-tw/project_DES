@@ -3,7 +3,7 @@ from . import permute as p
 
 meticulous_mode = True
 
-def pc1(btd: list):
+def pc1(btd: list[int])  -> list[int]:
     if meticulous_mode and len(btd) != 64:
         raise ValueError('pc1:invalid input')
     t = [57, 49, 41, 33, 25, 17, 9,
@@ -17,7 +17,7 @@ def pc1(btd: list):
     nbtd = p.permutation(btd, t)
     return nbtd
     
-def pc2(btd: list):
+def pc2(btd: list[int])  -> list[int]:
     if meticulous_mode and len(btd) != 56:
         raise ValueError('pc2:invalid input')
     t = [14, 17, 11, 24, 1, 5,
@@ -31,15 +31,15 @@ def pc2(btd: list):
     nbtd = p.permutation(btd, t)
     return nbtd
 
-def lcs(btd: list, t: int):
+def lcs(btd: list[int], t: int)  -> list[int]:
     op = btd[t:]+btd[:t]
     return op
     
     
-def generate_round_key(mk: bytes):
+def generate_round_key(mk: bytes)  -> list[list[int]]:
     if meticulous_mode and len(mk) != 8:
         raise ValueError('generate_round_key:invalid main key')
-    def generate_ki(rd: int, lsk: list):#rd -> 1 ~ 16
+    def generate_ki(rd: int, lsk: list[int]) -> tuple[list[int], list[int]]:#rd -> 1 ~ 16
         if meticulous_mode and len(lsk) != 56:
             raise ValueError('generate_ki:invalid sub key')
         l, r = lsk[:28], lsk[28:]

@@ -1,11 +1,12 @@
 from . import bit_utils as b 
+from typing import Callable
 
 meticulous_mode = True
 
-def feistel(btd:list, rks: list, f):
+def feistel(btd:list[list[int]], rks: list[list[int]], f: Callable[[list[int], list[int]], list[int]]) -> list[int]:
     if meticulous_mode and len(btd) % 2 != 0:
         raise ValueError("feistel:invalid input")
-    def one_round(l, r, rk):
+    def one_round(l: list[int], r: list[int], rk: list[int]) -> tuple[list[int], list[int]]:
         nl = r
         nr = b.xor(l, f(r, rk))
         return nl, nr

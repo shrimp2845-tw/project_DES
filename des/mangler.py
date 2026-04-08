@@ -3,7 +3,7 @@ from . import permute as p
 
 meticulous_mode = True
 
-def p_box(btd: list):
+def p_box(btd: list[int]) -> list[int]:
     if meticulous_mode and len(btd) != 32:
         raise ValueError('p_box:invalid input')
     t = [16, 7, 20, 21,
@@ -17,7 +17,7 @@ def p_box(btd: list):
     nbtd = p.permutation(btd, t)
     return nbtd
     
-def s_box(btd: list):
+def s_box(btd: list[int])  -> list[int]:
     if meticulous_mode and len(btd) != 48:
         raise ValueError('s_box:invalid input')
     t ={1: [[14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7], 
@@ -53,7 +53,7 @@ def s_box(btd: list):
             [7, 11, 4, 1, 9, 12, 14, 2, 0, 6, 10, 13, 15, 3, 5, 8], 
             [2, 1, 14, 7, 4, 10, 8, 13, 15, 12, 9, 0, 3, 5, 6, 11]],
         }
-    def si(bd: list, box: int):
+    def si(bd: list[int], box: int) -> list[int]:
         nonlocal t
         if meticulous_mode and (len(bd) != 6 or box > 8):
             raise ValueError(f'si:invalid input')
@@ -67,7 +67,7 @@ def s_box(btd: list):
         nbtd += si(sbtd[i], i+1)
     return nbtd
     
-def ep(btd: list):
+def ep(btd: list[int])  -> list[int]:
     if meticulous_mode and len(btd) != 32:
         raise ValueError('ep:invalid input')
     t = [32, 1, 2, 3, 4, 5,
@@ -81,7 +81,7 @@ def ep(btd: list):
     nbtd = p.permutation(btd, t)
     return nbtd
 
-def f(btd: list, rk: list):
+def f(btd: list[int], rk: list[int])  -> list[int]:
     if meticulous_mode and len(btd) != 32 or len(rk) != 48:
         raise ValueError('f:invalid input')
     ep_btd = ep(btd)

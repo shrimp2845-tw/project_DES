@@ -6,7 +6,7 @@ from . import feistel as f
 
 meticulous_mode = True
 
-def ip(btd: list):
+def ip(btd: list[int])  -> list[int]:
     if meticulous_mode and len(btd) != 64:
         raise ValueError('ip:invalid input')
     t = [58, 50, 42, 34, 26, 18, 10, 2,
@@ -20,7 +20,7 @@ def ip(btd: list):
     nbtd = p.permutation(btd, t)
     return nbtd
 
-def fp(btd: list):
+def fp(btd: list[int]) -> list[int]:
     if meticulous_mode and len(btd) != 64:
         raise ValueError('fp:invalid input')
     t = [40, 8, 48, 16, 56, 24, 64, 32,
@@ -38,14 +38,14 @@ class DES:
     def __init__(self, main_key: bytes):
         self.rks = k.generate_round_key(main_key)
         
-    def encrypt(self, block: bytes):
+    def encrypt(self, block: bytes) -> bytes:
         if len(block) != 8:
             raise ValueError('encrypt:invalid block')
         plaintext = b.bytes_to_bits(block)
         cipher_text = fp(f.feistel(ip(plaintext), self.rks, m.f))
         return b.bits_to_bytes(cipher_text)
     
-    def decrypt(self, block: bytes):
+    def decrypt(self, block: bytes) -> bytes:
         if len(block) != 8:
             raise ValueError('decrypt:invalid block')
         cipher_text = b.bytes_to_bits(block)
