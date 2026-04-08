@@ -80,7 +80,7 @@ class DES:
             return self.__remove_padding(self.__merge_data(self.cipher.decrypt(i) for i in blocks))
     
     def __cbc(self, blocks: list[bytes], decrypt: bool = False) -> bytes:
-        """perform encrypt & decryption of CBC method"""
+        """perform encryption & decryption of CBC method"""
         if not decrypt:
             v = self.__random_iv()
             cipher_data = [v] 
@@ -94,7 +94,7 @@ class DES:
             va, blocks = blocks[:-1], blocks[1:]
             return self.__remove_padding(self.__merge_data(self.__xor(self.cipher.decrypt(i), j) for i, j in zip(blocks, va)))
               
-    def  get_modes(self) -> list[str]:
+    def get_modes(self) -> list[str]:
         """get avaliable cipher mode of operation"""
         return self.modes
         
