@@ -1,10 +1,13 @@
-from des import DES
+import sys
+import pathlib
+sys.path.append(str(pathlib.Path(__file__).resolve().parent.parent))
+from des_core import BasicDES
 
 def test(l):
     key, pt, ct = l
     print(f' key        : {key} \n plaintext  : {pt} \n cipher_text: {ct}')
     key, ct, pt = bytes.fromhex(key), bytes.fromhex(ct), bytes.fromhex(pt)
-    cipher = DES(key)
+    cipher = BasicDES(key)
     e = cipher.encrypt(pt) == ct
     d = cipher.decrypt(ct) == pt
     print(' encrypt_success:', e, '\n', 'decrypt_success:',d)

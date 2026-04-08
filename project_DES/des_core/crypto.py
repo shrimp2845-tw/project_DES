@@ -34,7 +34,7 @@ def fp(btd: list[int]) -> list[int]:
     nbtd = p.permutation(btd, t)
     return nbtd
     
-class DES:
+class BasicDES:
     def __init__(self, main_key: bytes):
         self.rks = k.generate_round_key(main_key)
         
