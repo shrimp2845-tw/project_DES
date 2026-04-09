@@ -139,13 +139,13 @@ class DES:
         elif mode == 'CBC':
             return self.__cbc(blocks, decrypt = True)
             
-    def encrypt_files(self, name: str, new_name: str):
+    def encrypt_file(self, name: str, new_name: str):
         """encrypt target file and save it as 'new_name' """
         plaintext = read_bytes(name)
         ciphertext = self.encrypt(plaintext)
         write_bytes(new_name, ciphertext)
     
-    def decrypt_files(self, name: str, new_name: str):
+    def decrypt_file(self, name: str, new_name: str):
         """decrypt target file and save it as 'new_name' """
         ciphertext = read_bytes(name)
         plaintext = self.decrypt(ciphertext)

@@ -1,6 +1,6 @@
 import sys
-import pathlib
-sys.path.append(str(pathlib.Path(__file__).resolve().parent.parent))
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 from des_core import BasicDES
 
 def test(l):
