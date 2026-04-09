@@ -30,7 +30,7 @@ def main():
         print('_'*30, '\n')
         t = time.time()
         print(f'ciphertext (hex): \n{encrypt(k, p, m)}', '\n')
-        print('time spent:', time.time()-t, 'sec')
+        print('time spent:', round(time.time()-t, 2), 'sec')
     else:
         c = input('ciphertext (hex): ')
         k = input('key: ')
@@ -38,7 +38,7 @@ def main():
         print('_'*30, '\n')
         t = time.time()
         print(f'plaintext: \n{decrypt(k, c, m)}', '\n')
-        print('time spent:', time.time()-t,'sec')
+        print('time spent:', round(time.time()-t, 2),'sec')
         
 if __name__ == "__main__":
     main()

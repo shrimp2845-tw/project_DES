@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project-des"
+version = "0.1.0"
+description = "Educational Python implementation of the Data Encryption Standard (DES)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+authors = [
+    {name = "shrimp2845", email = "goldencheng15@gmail.com"}
+]
+
+keywords = ["des", "cryptography", "education", "feistel"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+Homepage = "https://github.com/shrimp2845-tw/project_DES"
+Repository = "https://github.com/shrimp2845-tw/project_DES"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["project_DES*"]

@@ -1,7 +1,4 @@
-import sys
-from pathlib import Path
-sys.path.append(str(Path(__file__).resolve().parent.parent))
-from des_core import BasicDES
+from project_DES.des_core.crypto import BasicDES
 
 def test(l):
     key, pt, ct = l
