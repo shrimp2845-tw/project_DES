@@ -109,8 +109,8 @@ class DES:
         self.__mode = mode
      
     def get_key(self) -> bytes:
-          """get current using key"""
-          return self.__key      
+        """get current using key"""
+        return self.__key      
        
     def change_key(self, key: Union[bytes, str]):
         """change current using key"""
