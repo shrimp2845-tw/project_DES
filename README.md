@@ -17,7 +17,7 @@ pip install project-des
 ```
 ### usage
 ```bash
-python -c "from project_DES import DES; cipher = DES(b'key'); print(cipher.encrypt(b'data').hex())"
+python -c "from project_DES import DES; cipher = DES(b'12345678'); print(cipher.encrypt(b'data').hex())"
 ```
 
 ## Docs

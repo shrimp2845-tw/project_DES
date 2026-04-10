@@ -4,22 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "project-des"
-version = "0.1.0"
+version = "0.1.1"
 description = "Educational Python implementation of the Data Encryption Standard (DES)"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT"}
-
+license = "MIT"
+license-files = ["LICENCE.txt"]
 authors = [
     {name = "shrimp2845", email = "goldencheng15@gmail.com"}
 ]
-
 keywords = ["des", "cryptography", "education", "feistel"]
 
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3"
 ]
 
 [project.urls]
